@@ -1,4 +1,4 @@
-package ChihuoLianMeng;
+﻿package ChihuoLianMeng;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -26,7 +26,7 @@ public class Business {
         System.out.println("3, 签收订单");
         System.out.println("4, 删除订单");
         System.out.println("5, 我要点赞");
-        System.out.println("6，退出系统");
+        System.out.println("6, 退出系统");
         System.out.println("***********************************");
     }
 

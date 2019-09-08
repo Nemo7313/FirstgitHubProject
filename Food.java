@@ -1,4 +1,4 @@
-package ChihuoLianMeng;
+
 
 public class Food {
     String dishName;

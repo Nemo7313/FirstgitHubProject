@@ -1,5 +1,4 @@
-﻿package ChihuoLianMeng;
-
+﻿
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,7 +9,7 @@ public class Business {
     public void showOrders(ArrayList<Order> orders){
         System.out.println("序号\t订餐人\t\t餐品信息\t\t送餐日期\t送餐地址\t\t总金额\t\t订单状态");
         for(int i=0; i<orders.size();i++) {
-            String status_Megs = (orders.get(i).statu==0)?"已预定":"已完成";
+            String status_Megs = (orders.get(i).status==0)?"已预定":"已完成";
             String time = orders.get(i).time+"点";
             String sumPrice = orders.get(i).sumPrice+"元";
             System.out.printf("%-5d\t%-5s\t%-5s\t\t%-5s\t\t%-10s\t%-5s\t\t%-5s\t\n",
@@ -55,10 +54,10 @@ public class Business {
         int num = input.nextInt();
         if(num<0 || num>orders.size()){
             System.out.println("您所选择的订单不存在！");
-        } else if(orders.get(num-1).statu==1) {
+        } else if(orders.get(num-1).status==1) {
             System.out.println("已成功删除能选择的订单！");
             orders.remove(num-1);
-        } else if(orders.get(num-1).statu==0){
+        } else if(orders.get(num-1).status==0){
             System.out.println("不能删除未签收的订单！");
         }
     }
@@ -69,11 +68,11 @@ public class Business {
 
         if(num<0 || num>orders.size()){
             System.out.println("您所选择的订单不存在！");
-        } else if(orders.get(num-1).statu==1) {
+        } else if(orders.get(num-1).status==1) {
             System.out.println("您选择的订单已完成签收，不能再次签收！");
-        } else if(orders.get(num-1).statu==0){
+        } else if(orders.get(num-1).status==0){
             System.out.println("您选择的订单已完成签收！");
-            orders.get(num-1).statu = 1;
+            orders.get(num-1).status = 1;
         }
 
     }
